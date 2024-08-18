@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+    <link rel="stylesheet" href="E:/Projects/Handlebars.js Project/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Product Catalog</h1>
+    </header>
+    <main id="content">
+    </main>
+    <script id="product-list-template" type="text/x-handlebars-template">
+        <ul class="product-list">
+        {{#each products}}
+        <li class="product-item">
+            <h2>{{name}}</h2>
+            <p>{{description}}</p>
+            <button class="view-details" data-id="{{id}}">View Details</button>
+        </li>
+        {{/each}}
+        </ul>
+    </script>
+    <script id="product-details-template" type="text/x-handlebars-template">
+        <div class="product-details">
+            <h2>{{name}}</h2>
+            <p><strong>Category:</strong>{{category}}</p>
+            <p><strong>Description:</strong>{{description}}</p>
+            <p><strong>Price:</strong>${{price}}</p>
+            <button id="back-to-list">Back to product list</button>
+        </div>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+    <script src="E:/Projects/Handlebars.js Project/app.js"></script>
+</body>
+
+</html>
